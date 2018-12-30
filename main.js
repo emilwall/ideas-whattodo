@@ -5,12 +5,15 @@ var html = document.querySelector('html');
 var log = document.getElementById('whattodo');
 
 var xhr = new XMLHttpRequest();
-var accessToken = "[INSERT ACCESS TOKEN]";
-var listId = 379138641; // TODO Replace with your list's id
-var url = 'https://cors-anywhere.herokuapp.com/https://a.wunderlist.com/api/v1/tasks?list_id=' + listId + '&completed=false';
+var accessToken = "[Your access token here]";
+var clientId = "39c8599abba8ddc89d45"; // TODO your client id here
+var listId = 379138641; // TODO your list id here
+var url = 'https://cors-anywhere.herokuapp.com/' +
+          'https://a.wunderlist.com/api/v1/tasks?list_id=' +
+          listId + '&completed=false';
 xhr.open('GET', url, true);
 xhr.setRequestHeader("X-Access-Token", accessToken);
-xhr.setRequestHeader("X-Client-ID", "39c8599abba8ddc89d45");
+xhr.setRequestHeader("X-Client-ID", clientId);
 xhr.onreadystatechange = function () {
   if(xhr.readyState === 4 && xhr.status === 200) {
     ideas = JSON.parse(xhr.responseText).map(item => item.title);

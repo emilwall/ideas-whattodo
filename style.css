@@ -3,6 +3,7 @@ body, html {
   position: relative;
   height: 100%;
   width: 100%;
+  cursor: pointer;
 }
 
 #whattodo {
@@ -16,4 +17,5 @@ body, html {
   font-family: cursive;
   text-align: center;
   font-weight: bold;
+  cursor: pointer;
 }
